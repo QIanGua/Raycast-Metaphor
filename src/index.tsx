@@ -16,10 +16,11 @@ export default function Command() {
 
   useEffect(() => {
     const searchArticles = async () => {
-      // const  response = await metaphor.search(searchText, {
-      const  response = await metaphor.search('funny article about tech culture', {
+      const  response = await metaphor.search(searchText, {
+      // const  response = await metaphor.search('funny article about tech culture', {
         // 搜索选项 
         numResults: 10,
+        useAutoprompt: true,
         // includeDomains: ['nytimes.com', 'wsj.com'],
         // startPublishedDate: '2023-06-12'
       });

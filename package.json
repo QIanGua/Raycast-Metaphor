@@ -25,6 +25,7 @@
   ],
   "dependencies": {
     "@raycast/api": "^1.56.3",
+    "@raycast/utils": "^1.4.16",
     "metaphor-node": "^1.0.18"
   },
   "devDependencies": {

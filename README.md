@@ -19,4 +19,4 @@ npm install && npm run dev
 ```
 
 ## TODO
-- convery the search keywords to `metaphor.search`
+- Find similar link for current url

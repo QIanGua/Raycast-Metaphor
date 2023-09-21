@@ -11,22 +11,29 @@
       "name": "index",
       "title": "Search Metaphor",
       "description": "Template for showing a static list and a detail view",
-      "mode": "view",
-      "preferences": [
-        {
-          "name": "MetaphorAPIKey",
-          "title": "Metaphor API Key",
-          "description": "API Key is used to connect with Metaphor",
-          "type": "password",
-          "required": true
-        }
-      ]
+      "mode": "view"
+    },
+    {
+      "name": "findSimilar",
+      "title": "Search Similar",
+      "description": "Template for showing similar links",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "MetaphorAPIKey",
+      "type": "password",
+      "title": "Metaphor API Token",
+      "required": false,
+      "description": "You can apply for a token in Metaphor. go to https://dashboard.metaphor.systems/",
+      "placeholder": "k2Zxf5M9R_lXJeP3BvOmYA"
     }
   ],
   "dependencies": {
     "@raycast/api": "^1.56.3",
     "@raycast/utils": "^1.4.16",
-    "metaphor-node": "^1.0.18"
+    "metaphor-node": "^1.0.20"
   },
   "devDependencies": {
     "@raycast/eslint-config": "1.0.5",

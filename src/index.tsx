@@ -4,7 +4,6 @@ import { getFavicon } from "@raycast/utils";
 import Metaphor from 'metaphor-node';
 import { Preferences, Result } from './type'
 
-
 const apikey = getPreferenceValues<Preferences>().MetaphorAPIKey;
 // console.log(apikey)
 const metaphor = new Metaphor(apikey);

@@ -1,6 +1,6 @@
-# Metaphor
+# Metaphor Extension in Raycast
 
-Search Metaphor
+**Search with Metaphor API in Raycast.**
 
 Feel easy to contribute to this project. 
 
@@ -10,7 +10,13 @@ Open Raycast window and call "Search Metaphor".
 
 ![Search Metaphor](./metadate/../metadata/metaphor-1.png)
 
-## install
+## Search Similar
+
+Open the Raycast window and trigger "Search Similar". Paste the URL link.
+
+![Search Metaphor](./metadate/../metadata/metaphor-2.png)
+
+## Install
 
 ```
 git clone https://github.com/QIanGua/Metaphor-Search.git
@@ -19,4 +25,5 @@ npm install && npm run dev
 ```
 
 ## TODO
-- Find similar link for current url
+
+- [x] Find similar link for current url

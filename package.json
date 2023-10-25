@@ -25,9 +25,8 @@
       "name": "MetaphorAPIKey",
       "type": "password",
       "title": "Metaphor API Token",
-      "required": false,
-      "description": "You can apply for a token in Metaphor. go to https://dashboard.metaphor.systems/",
-      "placeholder": "k2Zxf5M9R_lXJeP3BvOmYA"
+      "required": true,
+      "description": "You can apply for a token in Metaphor. go to https://dashboard.metaphor.systems/"
     }
   ],
   "dependencies": {

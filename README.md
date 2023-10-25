@@ -16,7 +16,7 @@ Open the Raycast window and trigger "Search Similar". Paste the URL link.
 
 ![Search Metaphor](./metadate/../metadata/metaphor-2.png)
 
-## Install
+## Install Manully
 
 ```
 git clone https://github.com/QIanGua/Metaphor-Search.git

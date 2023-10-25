@@ -1,6 +1,7 @@
 # Metaphor Extension in Raycast
 
 **Search with Metaphor API in Raycast.**
+In order to use this extension, you need to get a Metaphor API on [Metaphor's site](https://platform.metaphor.systems/).
 
 Feel easy to contribute to this project. 
 

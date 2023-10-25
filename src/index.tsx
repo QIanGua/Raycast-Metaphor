@@ -1,20 +1,19 @@
-import { useEffect, useState, useRef} from "react";
+import { useEffect, useState, useRef } from "react";
 import { Action, ActionPanel, List, Image, getPreferenceValues, showToast, Toast } from "@raycast/api";
 import { getFavicon } from "@raycast/utils";
-import Metaphor from 'metaphor-node';
-import { Preferences, Result } from './type'
+import Metaphor from "metaphor-node";
+import { Preferences, Result } from "./type";
 
 const apikey = getPreferenceValues<Preferences>().MetaphorAPIKey;
 // console.log(apikey)
 const metaphor = new Metaphor(apikey);
 
 export default function Command() {
-  const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState("");
   const [results, setResults] = useState<Result[]>([]);
-  const [loading, setLoading] = useState(false); 
-  const timerRef = useRef<NodeJS.Timeout | null>(null); 
+  const [loading, setLoading] = useState(false);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
   useEffect(() => {
-
     if (timerRef.current) {
       clearTimeout(timerRef.current);
     }
@@ -24,17 +23,17 @@ export default function Command() {
     }, 800);
 
     const searchArticles = async () => {
-      setLoading(true); // 
+      setLoading(true); //
       try {
         const response = await metaphor.search(searchText, {
           numResults: 10,
-          useAutoprompt: true
+          useAutoprompt: true,
         });
 
         setResults(response.results);
       } catch (error) {
         const err = error as Error;
-        if (!err.message.includes('400')) {
+        if (!err.message.includes("400")) {
           console.log(err.message);
           showToast({
             style: Toast.Style.Failure,
@@ -43,8 +42,8 @@ export default function Command() {
           });
         }
       }
-      setLoading(false); 
-    }
+      setLoading(false);
+    };
   }, [searchText]);
 
   return (
@@ -54,20 +53,20 @@ export default function Command() {
       navigationTitle="Search Results"
       onSearchTextChange={setSearchText}
     >
-      {results.length > 0 && results.map(result => (
-        <List.Item
-          key={result.id}
-          icon={getFavicon(result.url, { mask: Image.Mask.RoundedRectangle })}
-          title={result.title ? result.title : "Empty Title"}
-          subtitle={result.author}
-          actions={
-            <ActionPanel>
-              <Action.OpenInBrowser title="Open In Browser" url={result.url} />
-            </ActionPanel>
-          }
-        />
-      ))}
+      {results.length > 0 &&
+        results.map((result) => (
+          <List.Item
+            key={result.id}
+            icon={getFavicon(result.url, { mask: Image.Mask.RoundedRectangle })}
+            title={result.title ? result.title : "Empty Title"}
+            subtitle={result.author}
+            actions={
+              <ActionPanel>
+                <Action.OpenInBrowser title="Open In Browser" url={result.url} />
+              </ActionPanel>
+            }
+          />
+        ))}
     </List>
   );
 }
-

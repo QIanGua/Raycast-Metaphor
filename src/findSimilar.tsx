@@ -1,12 +1,12 @@
 import { useEffect, useState, useRef } from "react";
-import { Action, ActionPanel, List, Image, getPreferenceValues, showToast, Toast } from "@raycast/api";
+import { Action, ActionPanel, List, Image, showToast, Toast, getPreferenceValues } from "@raycast/api";
 import { getFavicon } from "@raycast/utils";
 import Metaphor from "metaphor-node";
 import { Preferences, Result } from "./type";
 
-const apikey = getPreferenceValues<Preferences>().MetaphorAPIKey;
-const metaphor = new Metaphor(apikey);
-// console.log(apikey)
+const prefs = getPreferenceValues<Preferences>();
+const metaphor = new Metaphor(prefs.MetaphorAPIKey);
+
 export default function Command() {
   const [searchText, setSearchText] = useState("");
   const [results, setResults] = useState<Result[]>([]);

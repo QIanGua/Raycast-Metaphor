@@ -6,7 +6,7 @@ import { Preferences, Result } from "./type";
 
 const prefs = getPreferenceValues<Preferences>();
 const metaphor = new Metaphor(prefs.MetaphorAPIKey);
-console.log(prefs.MetaphorAPIKey)
+// console.log(prefs.MetaphorAPIKey);
 
 export default function Command() {
   const [searchText, setSearchText] = useState("");

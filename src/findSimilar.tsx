@@ -10,7 +10,7 @@ const metaphor = new Metaphor(apikey);
 export default function Command() {
   const [searchText, setSearchText] = useState("");
   const [results, setResults] = useState<Result[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   useEffect(() => {
     if (timerRef.current) {
@@ -22,7 +22,6 @@ export default function Command() {
     }, 800);
 
     const searchArticles = async () => {
-      setLoading(true); //
       try {
         const response = await metaphor.findSimilar(searchText, {
           numResults: 10,
